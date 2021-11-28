@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class prepareBfsDfs {
+public class prepareBfsDfs1 {
     private static String[] operator = {"+", "-"};
     private static String[] info;
     private static int count = 0;
