@@ -1,8 +1,27 @@
-public enum Symbol {
-    DIAMOND("다이아몬드"),
-    SPADE("스페이드"),
-    CLUB("클로버"),
-    HEART("하트");
+package practice;
 
-    private final 
+public enum Symbol {
+    ACE(1),
+    TWO(2),
+    THREE(3),
+    FOUR(4),
+    FIVE(5),
+    SIX(6),
+    SEVEN(7),
+    EIGHT(8),
+    NINE(9),
+    TEN(10),
+    JACK(10),
+    QUEEN(10),
+    KING(10);
+
+    private final Integer score;
+
+    Symbol(Integer score) {
+        this.score = score;
+    }
+
+    public Integer getScore() {
+        return score;
+    }
 }
