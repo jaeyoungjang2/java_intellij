@@ -1,3 +1,5 @@
+package practice;
+
 import javax.swing.Spring;
 
 public class Solution {
