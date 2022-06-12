@@ -2,7 +2,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class B2579_계단오르기2 {
+public class B2579_계단오르기_bottomUp {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -14,7 +14,7 @@ public class B2579_계단오르기2 {
         for (int i = 1; i <= floor; i++) {
             stairs[i] = Integer.parseInt(br.readLine());
         }
-
+        // 두 계단을 밟았을 때의 점수가 들어감
         dp[1] = stairs[1];
         if (floor >= 2) {
             dp[2] = stairs[1] + stairs[2];

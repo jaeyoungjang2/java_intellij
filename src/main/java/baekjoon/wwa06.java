@@ -1,3 +1,5 @@
+package baekjoon;
+
 public class wwa06 {
 
     public static void main(String[] args) {

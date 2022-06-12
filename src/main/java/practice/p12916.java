@@ -1,3 +1,5 @@
+package practice;
+
 import java.util.Arrays;
 
 public class p12916 {

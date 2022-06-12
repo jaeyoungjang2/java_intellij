@@ -1,3 +1,5 @@
+package baekjoon;
+
 import java.util.PriorityQueue;
 
 public class prepareHeap1_1 {

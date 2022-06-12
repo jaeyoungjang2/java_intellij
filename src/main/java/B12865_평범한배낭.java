@@ -2,16 +2,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.StringTokenizer;
 
-public class B12865_배낭 {
-
-    private static int max;
-    private static int answer = 0;
-    private static Map<Integer, Integer> record = new HashMap<>();
+public class B12865_평범한배낭 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -19,29 +12,35 @@ public class B12865_배낭 {
         // 물건의 갯수
         int N = Integer.parseInt(st.nextToken());
         // 들 수 있는 무게
-        max = Integer.parseInt(st.nextToken());
+        int max = Integer.parseInt(st.nextToken());
 
-        for (int i = 0; i < 100001; i++) {
-            record.put(i, 0);
-        }
-
+        ArrayList<Integer> weights = new ArrayList<>();
+        ArrayList<Integer> values = new ArrayList<>();
+        weights.add(0);
+        values.add(0);
         for (int i = 0; i < N; i++) {
             st = new StringTokenizer(br.readLine());
-            // 적은 무게의 물건으로 최대 가치를 가질 수 있도록 해야함
-            // 물건의 무게
-            int W = Integer.parseInt(st.nextToken());
-            // 물건의 가치
-            int V = Integer.parseInt(st.nextToken());
+            weights.add(Integer.parseInt(st.nextToken()));
+            values.add(Integer.parseInt(st.nextToken()));
+        }
 
-            if (record.get(W) < W) {
-                record.put(W, V);
+        int[][] record = new int[max + 1][N + 1];
+        // 들 수 있는 최대 무게
+        for (int i = 1; i <= max; i++) {
+            // 물건 종류별로 확인
+            for (int j = 1; j <= N; j++) {
+                // 현재 물건의 무게와 가치
+                Integer weight = weights.get(j);
+                Integer value = values.get(j);
+
+                if (weight > i) {
+                    record[i][j] = Math.max(record[i - 1][j], record[i][j - 1]);
+                    continue;
+                }
+                record[i][j] = Math.max(record[i - 1][j], record[i][j - 1]);
+                record[i][j] = Math.max(record[i][j], record[i - weight][j - 1] + value);
             }
         }
-
-        for (int i = 2; i <= max; i++) {
-            
-        }
+        System.out.println(record[max][N]);
     }
-
-
 }

@@ -1,3 +1,5 @@
+package baekjoon;
+
 public class prepareBfsDfs2 {
     private static boolean[] visit;
 

@@ -1,3 +1,5 @@
+package programmers;
+
 public class kakao60058_recursive {
 
     public static void main(String[] args) {

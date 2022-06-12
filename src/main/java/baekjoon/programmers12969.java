@@ -1,3 +1,5 @@
+package baekjoon;
+
 public class programmers12969 {
 
     public static void main(String[] args) {

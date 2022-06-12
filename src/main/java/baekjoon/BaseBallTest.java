@@ -1,3 +1,5 @@
+package baekjoon;
+
 public class BaseBallTest {
     private String a;
 

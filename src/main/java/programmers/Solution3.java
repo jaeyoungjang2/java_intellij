@@ -1,3 +1,5 @@
+package programmers;
+
 import java.util.ArrayList;
 
 public class Solution3 {
